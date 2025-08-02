@@ -10,7 +10,7 @@ interface WalletState {
 }
 
 const MONAD_TESTNET_CONFIG = {
-  chainId: '0x29a', // 666 in hex
+  chainId: '0x2797', // 10143 in hex
   chainName: 'Monad Testnet',
   nativeCurrency: {
     name: 'MON',
@@ -18,7 +18,7 @@ const MONAD_TESTNET_CONFIG = {
     decimals: 18,
   },
   rpcUrls: ['https://testnet-rpc.monad.xyz'],
-  blockExplorerUrls: ['https://testnet-explorer.monad.xyz'],
+  blockExplorerUrls: ['https://testnet.monadexplorer.com'],
 };
 
 export const useWallet = () => {
@@ -42,7 +42,7 @@ export const useWallet = () => {
       const network = await provider.getNetwork();
 
       // Check if we're on Monad Testnet
-      if (network.chainId !== 666n) {
+      if (network.chainId !== 10143n) {
         await switchToMonadTestnet();
       }
 
